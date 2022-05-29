@@ -1,0 +1,60 @@
+<?php
+include("db.php"); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller-PHP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>  
+    <div class = "container mt-3">
+        <div class = "row>
+            <div class="col-md-8">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Ref</th>
+                            <th>Tipo</th>
+                            <th>Grado</th>
+                            <th>Cantidad</th>
+                            <th>Expedida</th>
+                            <th>Vencimiento</th>
+                            <th>Precio</th>
+                            <th>Accciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $query = "SELECT * FROM productos";
+                        $result = mysqli_query($conn,$query);
+                        while($row = mysqli_fetch_array($result)){?>
+                            <tr>
+                                <td>
+                                <img width="100" src="data:<?php echo $row['grado']; ?>;base64,<?php echo  base64_encode($row['foto']); ?>">
+                                </td>
+                                <td><?php echo $row['ref'] ?></td>
+                                <td><?php echo $row['tipo'] ?></td>
+                                <td><?php echo $row['grado'] ?></td>
+                                <td><?php echo $row['cantidad'] ?></td>
+                                <td><?php echo $row['expedida'] ?></td>
+                                <td><?php echo $row['vencimiento'] ?></td>
+                                <td><?php echo $row['precio'] ?></td>
+                                <td>
+                                    <a href="editar.php?=<?php echo $row['ref']?>" class="btn btn-warning">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                    <a href="eliminar.php?=<?php echo $row['ref']?>" class="btn btn-danger">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
