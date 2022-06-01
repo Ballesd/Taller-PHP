@@ -23,8 +23,8 @@ include("db.php"); ?>
         </nav>
     </header>  
     <div class = "container mt-3">
-        <div class = "row>
-            <div class="col-md-8">
+        <div class = "d-flex justify-content-center">
+            <div class="col-md-8 table-responsive">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -46,7 +46,7 @@ include("db.php"); ?>
                         while($row = mysqli_fetch_array($result)){?>
                             <tr>
                                 <td>
-                                <img width="100" src="data:<?php echo $row['grado']; ?>;base64,<?php echo  base64_encode($row['foto']); ?>">
+                                <img class="img-thumbnail" src="data:<?php echo $row['grado']; ?>;base64,<?php echo  base64_encode($row['foto']); ?>">
                                 </td>
                                 <td><?php echo $row['ref'] ?></td>
                                 <td><?php echo $row['tipo'] ?></td>
@@ -59,7 +59,8 @@ include("db.php"); ?>
                                     <a href="editar.php?=<?php echo $row['ref']?>" class="btn btn-warning">
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
-                                    <a href="eliminar.php?=<?php echo $row['ref']?>" class="btn btn-danger">
+
+                                    <a href="eliminar.php?=<?php echo $row['ref']?>" class="mt-2 btn btn-danger">
                                         <i class="bi bi-trash-fill"></i>
                                     </a>
                                 </td>
