@@ -20,5 +20,5 @@ if (isset($_POST['save'])) {
 
     $result = mysqli_query($conn, $query);
 
-    header("Location: productos.php");
+    header("Location: tabla.php");
 }

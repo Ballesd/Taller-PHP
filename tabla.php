@@ -60,7 +60,7 @@ include("db.php"); ?>
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
 
-                                    <a href="eliminar.php?=<?php echo $row['ref']?>" class="mt-2 btn btn-danger">
+                                    <a href="eliminar.php?ref=<?php echo $row['ref']?>" class="mt-2 btn btn-danger">
                                         <i class="bi bi-trash-fill"></i>
                                     </a>
                                 </td>
