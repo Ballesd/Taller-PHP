@@ -14,10 +14,17 @@ include("db.php"); ?>
 </head>
 <body>
     <header>
-
+        <nav class="navbar bg-secondary" >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./imagenes/Logo.png" alt="" width="50" height="44" class="d-inline-block align-text-top">
+                </a>
+                <a type="submit" href="tabla.php" class="btn btn-info"> Observar </a>
+            </div>
+        </nav>
     </header>
     <main>
-
+        
     </main>
 </body>
 <footer>
