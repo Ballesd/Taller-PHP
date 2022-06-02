@@ -33,7 +33,7 @@ include("db.php"); ?>
                             <th>Tipo</th>
                             <th>Grado</th>
                             <th>Cantidad</th>
-                            <th>Expedida</th>
+                            <th>Expedición</th>
                             <th>Vencimiento</th>
                             <th>Precio</th>
                             <th>Accciones</th>
