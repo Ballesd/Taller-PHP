@@ -51,7 +51,7 @@ if(isset($_POST['edit'])){
     <header>
         <nav class="navbar shadow-lg" style="background-color: gray;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="./imagenes/Logo.png" alt="" width="50" height="44" class="d-inline-block align-text-top">
                 </a>    
                 <a type="submit" href="tabla.php" class="btn btn-info"> Observar </a>
