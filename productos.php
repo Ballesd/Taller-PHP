@@ -68,7 +68,7 @@
 
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto:</label>
-                    <input type="file" id="foto" name="foto" class="form-control" aria-describedby="FotoHelp">
+                    <input type="file" id="foto" name="foto" class="form-control bg-info" aria-describedby="FotoHelp">
                 </div>
                 <center>
                     <input type="submit" class="btn btn-success btn-block center" name="save" value="Guardar" required></inpunt>

@@ -56,7 +56,7 @@ include("db.php"); ?>
                                 <td><?php echo $row['vencimiento'] ?></td>
                                 <td><?php echo $row['precio'] ?></td>
                                 <td>
-                                    <a href="editar.php?=<?php echo $row['ref']?>" class="btn btn-warning">
+                                    <a href="editar.php?ref=<?php echo $row['ref']?>" class="btn btn-warning">
                                         <i class="bi bi-pencil-fill"></i>
                                     </a>
 
