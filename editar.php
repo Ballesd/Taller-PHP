@@ -28,7 +28,7 @@ if(isset($_POST['edit'])){
     $fecha_e = $_POST['f_exp'];
     $fecha_v = $_POST['f_ven'];
     $precio = $_POST['precio'];
-    $query = "UPDATE productos SET ref=$refer, foto=$img, tipo='$tipo', grado=$grado, cantidad=$cantidad, marca='$marca', expedida=$fecha_e, vencimiento=$fecha_v, precio=$precio WHERE ref = $ref";
+    $query = "UPDATE productos SET ref=$refer, foto='$img', tipo='$tipo', grado=$grado, cantidad=$cantidad, marca='$marca', expedida='$fecha_e', vencimiento='$fecha_v', precio=$precio WHERE ref = $ref";
     $result = mysqli_query($conn,$query);
 
 
@@ -51,7 +51,7 @@ if(isset($_POST['edit'])){
     <header>
         <nav class="navbar shadow-lg" style="background-color: gray;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="./imagenes/Logo.png" alt="" width="50" height="44" class="d-inline-block align-text-top">
                 </a>    
                 <a type="submit" href="tabla.php" class="btn btn-info"> Observar </a>
@@ -108,12 +108,12 @@ if(isset($_POST['edit'])){
                     <input type="file" id="foto" name="foto" class="form-control bg-info" aria-describedby="FotoHelp">
                 </div>
                 <center>
-                    <input type="submit" class="btn btn-success btn-block center" name="save" value="Actualizar" required></inpunt>
+                    <input type="submit" class="btn btn-success btn-block center" name="edit" value="Actualizar" required></inpunt>
                 </center>
             </form>
         </section>
     </main>
 </body>
-<script src="funciones.js"></script>
+<script src="validaciones.js"></script>
 
 </html>

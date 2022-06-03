@@ -1,5 +1,8 @@
 <?php
 include("db.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +15,7 @@ include("db.php"); ?>
     <header>
         <nav class="navbar bg-secondary" >
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="./imagenes/Logo.png" alt="" width="50" height="44" class="d-inline-block align-text-top">
                 </a>
                 <div>
@@ -72,3 +75,6 @@ include("db.php"); ?>
         </div>
     </div>
 </body>
+<script src = "validaciones.js"></script>
+
+</html>
