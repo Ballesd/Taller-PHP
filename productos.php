@@ -77,6 +77,6 @@
         </section>
     </main>
 </body>
-<script src="funciones.js"></script>
+<script src="validaciones.js"></script>
 
 </html>
