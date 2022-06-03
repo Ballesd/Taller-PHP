@@ -25,32 +25,38 @@ include("db.php"); ?>
     </header>
     <main id="contenido" class="p-4">
         <section id="contenedor_form" class="container p-4 col-lg-4 bg-white border border-light rounded shadow-lg">
-            <h3 class="d-flex justify-content-center">Ingrese Usuario</h3>
-            <form action="guardarUsuarios.php" method="POST" name="viewport" content="width=device-width col-lg-3 col-md-4" enctype="multipart/form-data">
+          <h3 class="d-flex justify-content-center">Ingrese Usuario</h3>
+          <form action="guardarUsuarios.php" method="POST" name="viewport" content="width=device-width col-lg-3 col-md-4" enctype="multipart/form-data">
             <div class="form-group text-center"><br>
-                <label for="Identidad"><b>ID</b></label>
+                <label for="Identidad"><b>ID:</b></label>
                 <input type="number" class="form-control text-center" id="Identidad" name="Identidad" placeholder="Ingrese su ID">
             </div>
             <div class="form-group text-center"><br>
-                <label for="Nombre del Cliente"><b>Nombre del Cliente</b></label>
+                <label for="Nombre del Cliente"><b>Nombre:</b></label>
                 <input type="text" class="form-control text-center" id="Nombre" name="Nombre" placeholder="Nombre Completo">
             </div>
             <div class="form-group  text-center"><br>
-                <label for="Apellidos"><b>Apellidos</b></label>
+                <label for="Apellidos"><b>Apellidos:</b></label>
                 <input type="text" class="form-control text-center" id="Ape" name="Ape" placeholder="Apellidos">
             </div>
             <div class="form-group text-center"><br>
-                <label for="Fecha de Nacimiento"><b>Fecha de Nacimiento</b></label>
+                <label for="Fecha de Nacimiento"><b>Fecha de Nacimiento:</b></label>
                 <input type="date" class="form-control text-center" id="Nacimiento" name="Nacimiento" placeholder="DD/MM/AÑO">
             </div>
-            <div class="form-group text-center"><br>
-                <label for="Cargo"><b>Cargo</b></label>
-                <input type="text" class="form-control text-center" id="Cargo" name="Cargo" placeholder="A que se dedica">
+
+            <div class="form-group text-center">
+              <label for="Cargo"><b>Cargo:</b></label>
+              <select name="Cargo" id="Cargo" class="form-select" >
+                <option value="Administrador">Administrador</option>
+                <option value="Usuario">Usuario</option>
+                <option value="Comprador">Comprador</option>
+              </select>
             </div>
             <center>
                 <input type="submit" class="btn btn-success btn-block center" name="saveu" value="Guardar" required></inpunt>
             </center>
-        </form>
+
+          </form>
         </section>
     </main>
 </body>
@@ -63,9 +69,7 @@ include("db.php"); ?>
     <div class="me-5 d-none d-lg-block">
       <span>Conectate directamente con nostros:</span>
     </div>
-    <!-- Left -->
 
-    <!-- Right -->
     <div>
       <a href="" class="me-4 text-reset">
         <i class="fab fa-facebook-f"></i>
@@ -127,9 +131,7 @@ include("db.php"); ?>
             <a href="#!" class="text-reset">Vodka</a>
           </p>
         </div>
-        <!-- Grid column -->
 
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
@@ -148,9 +150,6 @@ include("db.php"); ?>
             <a href="#!" class="text-reset">Ayuda</a>
           </p>
         </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
@@ -174,8 +173,8 @@ include("db.php"); ?>
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    © 2022 Administración de Sistemas Informáticos
+    <a class="text-reset fw-bold" href="https://unal.edu.co/">UNIVERSIDAD NACIONAL DE COLOMBIA</a>
   </div>
   <!-- Copyright -->
 </footer>
