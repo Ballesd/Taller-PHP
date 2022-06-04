@@ -1,11 +1,11 @@
 <?php
 
 include('db.php');
-if(isset($_GET['ref'])){
+if (isset($_GET['ref'])) {
     $ref = $_GET['ref'];
     $query = "SELECT * FROM productos WHERE ref = $ref";
-    $result = mysqli_query($conn,$query);
-    if(mysqli_num_rows($result) == 1){
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
         $ref = $row['ref'];
         #$imga = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
@@ -18,7 +18,7 @@ if(isset($_GET['ref'])){
         $preci = $row['precio'];
     }
 }
-if(isset($_POST['edit'])){
+if (isset($_POST['edit'])) {
     $refer = $_POST['ref'];
     $img = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
     $tipo = $_POST['tipo'];
@@ -29,11 +29,12 @@ if(isset($_POST['edit'])){
     $fecha_v = $_POST['f_ven'];
     $precio = $_POST['precio'];
     $query = "UPDATE productos SET ref=$refer, foto='$img', tipo='$tipo', grado=$grado, cantidad=$cantidad, marca='$marca', expedida='$fecha_e', vencimiento='$fecha_v', precio=$precio WHERE ref = $ref";
-    $result = mysqli_query($conn,$query);
+    $result = mysqli_query($conn, $query);
 
 
     header("Location: tabla.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,71 +50,156 @@ if(isset($_POST['edit'])){
 
 <body>
     <header>
-        <nav class="navbar shadow-lg" style="background-color: gray;">
+        <nav class="navbar shadow-lg bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
-                    <img src="./imagenes/Logo.png" alt="" width="50" height="44" class="d-inline-block align-text-top">
-                </a>    
-                <a type="submit" href="tabla.php" class="btn btn-info"> Observar </a>
+                    <img src="./imagenes/Logo.png" alt="" width="70" height="60" class="d-inline-block align-text-top">
+                </a>
+                <div>
+                    <a href="tabla.php" class="btn btn-light"> Atrás </a>
+                    <a type="submit" href="tabla.php" class="btn btn-primary"> Ver lista de productos </a>
+                </div>
+
             </div>
         </nav>
     </header>
 
     <main id="contenido" class="p-4">
         <section id="contenedor_form" class="container p-4 col-lg-4 bg-white border border-light rounded shadow-lg">
-            <h3 class="d-flex justify-content-center">Edición</h3>
-            <form  action="editar.php?ref=<?php echo $ref;?>" method="POST" name="viewport" content="width=device-width col-lg-3 col-md-4" enctype="multipart/form-data">
+            <h3 class="d-flex justify-content-center">Editar Producto</h3>
+            <form action="editar.php?ref=<?php echo $ref; ?>" method="POST" name="viewport" content="width=device-width col-lg-3 col-md-4" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="ref" class="form-label">Referencia:</label>
-                    <input type="number" id="ref" name="ref" class="form-control" aria-describedby="refHelp" value = "<?php echo $ref; ?>"required>
+                    <input type="number" id="ref" name="ref" class="form-control" aria-describedby="refHelp" value="<?php echo $ref; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="tipo" class="form-label">Tipo:</label>
-                    <input type="text" id="tipo" name="tipo" class="form-control" aria-describedby="TipoHelp" value = "<?php echo $tip; ?>">
+                    <input type="text" id="tipo" name="tipo" class="form-control" aria-describedby="TipoHelp" value="<?php echo $tip; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="grado" class="form-label">Grado:</label>
-                    <input type="number" id="grado" name="grado" class="form-control" aria-describedby="GradoHelp" value = "<?php echo $grad; ?>">
+                    <input type="number" id="grado" name="grado" class="form-control" aria-describedby="GradoHelp" value="<?php echo $grad; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="cant" class="form-label">Cantidad:</label>
-                    <input type="number" id="cant" name="cant" class="form-control" aria-describedby="CantidadHelp" value = "<?php echo $cant; ?>">
+                    <input type="number" id="cant" name="cant" class="form-control" aria-describedby="CantidadHelp" value="<?php echo $cant; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="marca" class="form-label">Marca:</label>
-                    <input type="text" id="marca" name="marca" class="form-control" aria-describedby="MarcaHelp" value = "<?php echo $marc; ?>">
+                    <input type="text" id="marca" name="marca" class="form-control" aria-describedby="MarcaHelp" value="<?php echo $marc; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="f_exp" class="form-label">Fecha de Expedición:</label>
-                    <input type="date" id="f_exp" name="f_exp" class="form-control" min="1200-01-01" aria-describedby="FEHelp" value = "<?php echo $fecha; ?>">
-                </div> 
+                    <input type="date" id="f_exp" name="f_exp" class="form-control" min="1200-01-01" aria-describedby="FEHelp" value="<?php echo $fecha; ?>" required>
+                </div>
 
                 <div class="mb-3">
                     <label for="f_ven" class="form-label">Fecha de Vencimiento:</label>
-                    <input type="date" id="f_ven" name="f_ven" class="form-control" max="2090-01-01" aria-describedby="FEHelp" value = "<?php echo $fechaV; ?>">
+                    <input type="date" id="f_ven" name="f_ven" class="form-control" max="2090-01-01" aria-describedby="FEHelp" value="<?php echo $fechaV; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="precio" class="form-label">Precio:</label>
-                    <input type="number" id="precio" name="precio" class="form-control" aria-describedby="PrecioHelp" value = "<?php echo $preci; ?>">
+                    <input type="number" id="precio" name="precio" class="form-control" aria-describedby="PrecioHelp" value="<?php echo $preci; ?>" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto:</label>
-                    <input type="file" id="foto" name="foto" class="form-control bg-info" aria-describedby="FotoHelp">
+                    <input type="file" id="foto" name="foto" class="form-control" aria-describedby="FotoHelp" accept="image/*" required>
                 </div>
                 <center>
-                    <input type="submit" class="btn btn-success btn-block center" name="edit" value="Actualizar" required></inpunt>
+                    <input type="submit" class="btn btn-success btn-block center" name="edit" value="Actualizar"></inpunt>
+                    <a href="tabla.php"> <button type="button" class="btn btn-danger btn-block center">Cancelar</button></a>
                 </center>
             </form>
         </section>
     </main>
+
+    <footer class="text-center text-lg-start bg-dark text-white pt-1">
+        <section>
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Licores BalDaEr
+                        </h6>
+                        <p>
+                            Consigue la mayor variedad de licores y productos.
+                            Somos actualmente una empresa con un alcance local y en todo el territorio Nacional
+                        </p>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Productos
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Ron</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Aguardiente</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Tequila</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vodka</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Precios</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Ajustes</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Ordenes</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Ayuda</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contactanos!F¿</h6>
+                        <p><i class="fas fa-home me-3"></i> Manizales, UN Sede Manizales, CO</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            baldaer_licors@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 57 320 575 1236</p>
+                        <p><i class="fas fa-print me-3"></i> + 57 312 676 6372</p>
+                        <p><i class="fas fa-print me-3"></i> + 57 315 801 3496</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Administración de Sistemas Informáticos
+            <a class="text-reset fw-bold" href="https://unal.edu.co/">UNIVERSIDAD NACIONAL DE COLOMBIA</a>
+        </div>
+    </footer>
 </body>
+
+
 <script src="validaciones.js"></script>
 
 </html>
