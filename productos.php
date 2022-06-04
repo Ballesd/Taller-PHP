@@ -33,45 +33,45 @@
 
                 <div class="mb-3">
                     <label for="tipo" class="form-label">Tipo:</label>
-                    <input type="text" id="tipo" name="tipo" class="form-control" aria-describedby="TipoHelp">
+                    <input type="text" id="tipo" name="tipo" class="form-control" aria-describedby="TipoHelp" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="grado" class="form-label">Grado:</label>
-                    <input type="number" id="grado" name="grado" class="form-control" aria-describedby="GradoHelp">
+                    <input type="number" id="grado" name="grado" class="form-control" aria-describedby="GradoHelp" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="cant" class="form-label">Cantidad:</label>
-                    <input type="number" id="cant" name="cant" class="form-control" aria-describedby="CantidadHelp">
+                    <input type="number" id="cant" name="cant" class="form-control" aria-describedby="CantidadHelp" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="marca" class="form-label">Marca:</label>
-                    <input type="text" id="marca" name="marca" class="form-control" aria-describedby="MarcaHelp">
+                    <input type="text" id="marca" name="marca" class="form-control" aria-describedby="MarcaHelp" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="f_exp" class="form-label">Fecha de Expedición:</label>
-                    <input type="date" id="f_exp" name="f_exp" class="form-control" min="1200-01-01" aria-describedby="FEHelp">
+                    <input type="date" id="f_exp" name="f_exp" class="form-control" min="1200-01-01" aria-describedby="FEHelp" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="f_ven" class="form-label">Fecha de Vencimiento:</label>
-                    <input type="date" id="f_ven" name="f_ven" class="form-control" max="2090-01-01" aria-describedby="FEHelp">
+                    <input type="date" id="f_ven" name="f_ven" class="form-control" max="2090-01-01" aria-describedby="FEHelp" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="precio" class="form-label">Precio:</label>
-                    <input type="number" id="precio" name="precio" class="form-control" aria-describedby="PrecioHelp">
+                    <input type="number" id="precio" name="precio" class="form-control" aria-describedby="PrecioHelp" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto:</label>
-                    <input type="file" id="foto" name="foto" class="form-control bg-info" aria-describedby="FotoHelp">
+                    <input type="file" id="foto" name="foto" class="form-control bg-info" aria-describedby="FotoHelp" required>
                 </div>
                 <center>
-                    <input type="submit" class="btn btn-success btn-block center" name="save" value="Guardar" required></inpunt>
+                    <input type="submit" class="btn btn-success btn-block center" name="save" value="Guardar"></inpunt>
                 </center>
             </form>
         </section>
