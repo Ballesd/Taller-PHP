@@ -65,7 +65,7 @@ if (isset($_POST['edit'])) {
     </header>
 
     <main id="contenido" class="p-4">
-        <section id="contenedor_form" class="container p-4 col-lg-4 bg-white border border-light rounded shadow-lg">
+        <section id="contenedor_form" class="container p-4 col-lg-4 bg-white border border-dark rounded shadow-lg">
             <h3 class="d-flex justify-content-center">Editar Producto</h3>
             <form action="editar.php?ref=<?php echo $ref; ?>" method="POST" name="viewport" content="width=device-width col-lg-3 col-md-4" enctype="multipart/form-data">
                 <div class="mb-3">
